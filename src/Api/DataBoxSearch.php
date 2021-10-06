@@ -48,6 +48,8 @@ class DataBoxSearch extends \SoapClient
       'tPDZRec' => 'Defr\\CzechDataBox\\Api\\tPDZRec',
       'tPDZRecArray' => 'Defr\\CzechDataBox\\Api\\tPDZRecArray',
       'tPDZInfoOutput' => 'Defr\\CzechDataBox\\Api\\tPDZInfoOutput',
+	  'tISDSSearchInput3' => 'Defr\\CzechDataBox\\Api\\tISDSSearchInput3',
+	  'tISDSSearchOutput2' => 'Defr\\CzechDataBox\\Api\\tISDSSearchOutput2',
     );
 
     /**

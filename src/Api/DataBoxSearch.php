@@ -137,8 +137,8 @@ class DataBoxSearch extends \SoapClient
     }
 
     /**
-     * @param UNKNOWN $parameter
-     * @return UNKNOWN
+     * @param tISDSSearchInput3 $parameter
+     * @return tISDSSearchOutput2
      */
     public function ISDSSearch3($parameter)
     {

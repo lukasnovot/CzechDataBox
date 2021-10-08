@@ -67,9 +67,9 @@ class DataBoxSearch extends \SoapClient
       'features' => 1,
     ), $options);
       if (!$wsdl) {
-        $wsdl = '/Users/dennis/sites/isas/vendor/dfridrich/czech-data-box/Resources/db_search.wsdl';
+        $$wsdl = __DIR__ . '/../../Resources/db_search.wsdl';
       }
-	$wsdl = __DIR__ . '/../../Resources/db_searchNew.wsdl';
+	
       parent::__construct($wsdl, $options);
     }
 

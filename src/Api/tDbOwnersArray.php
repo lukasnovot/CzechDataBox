@@ -23,6 +23,18 @@ class tDbOwnersArray
      */
     public function getDbOwnerInfo()
     {
+        if ( $this->dbOwnerInfo instanceof \stdClass) {
+		    $object = new tDbOwnerInfo();
+
+		    foreach ($this->dbOwnerInfo as $key => $value) {
+		    	$mehtod = 'set' . Strings::firstUpper($key);
+		    	 if (method_exists($object, $mehtod)) {
+		    	 	$object->$mehtod($value);
+			     }
+		    }
+
+		    $this->dbOwnerInfo = $object;
+	    }
       return $this->dbOwnerInfo;
     }
 

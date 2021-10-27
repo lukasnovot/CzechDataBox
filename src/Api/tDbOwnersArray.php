@@ -27,7 +27,7 @@ class tDbOwnersArray
 		    $object = new tDbOwnerInfo();
 
 		    foreach ($this->dbOwnerInfo as $key => $value) {
-		    	$mehtod = 'set' . Strings::firstUpper($key);
+		    	$mehtod = 'set' . ucfirst($key);
 		    	 if (method_exists($object, $mehtod)) {
 		    	 	$object->$mehtod($value);
 			     }

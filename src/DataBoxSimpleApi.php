@@ -72,12 +72,13 @@ class DataBoxSimpleApi
      *
      * @param int $days
      * @param int $limit
+     * @param int $offset
      *
      * @return tRecord[]|null
      *
      * @throws DataBoxException
      */
-    public function getListOfReceivedMessages($days = 90, $limit = 1000)
+    public function getListOfReceivedMessages($days = 90, $limit = 1000, $offset = 0)
     {
         if ($days < 0 or $limit < 1) {
             throw new DataBoxException();
@@ -87,7 +88,7 @@ class DataBoxSimpleApi
         $params->setDmToTime(new \DateTime())
             ->setDmFromTime((new \DateTime())->sub(new \DateInterval('P'.$days.'D')))
             ->setDmLimit($limit)
-            ->setDmOffset(0)
+            ->setDmOffset($offset)
             ->setDmRecipientOrgUnitNum(null)
             ->setDmStatusFilter(-1);
 
@@ -102,12 +103,13 @@ class DataBoxSimpleApi
      *
      * @param int $days
      * @param int $limit
+     * @param int $offset
      *
      * @return tRecord[]|null
      *
      * @throws DataBoxException
      */
-    public function getListOfSentMessages($days = 90, $limit = 1000)
+    public function getListOfSentMessages($days = 90, $limit = 1000, $offset = 0)
     {
         if ($days < 0 or $limit < 1) {
             throw new DataBoxException();
@@ -117,7 +119,7 @@ class DataBoxSimpleApi
         $params->setDmToTime(new \DateTime())
             ->setDmFromTime((new \DateTime())->sub(new \DateInterval('P'.$days.'D')))
             ->setDmLimit($limit)
-            ->setDmOffset(0)
+            ->setDmOffset($offset)
             ->setDmSenderOrgUnitNum(null)
             ->setDmStatusFilter(-1);
 
